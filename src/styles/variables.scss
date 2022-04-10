@@ -1,0 +1,38 @@
+$blue-color: #4793FF;
+$light-color: #FFFFFF;
+$black-color: #0D1117;
+$dark-color: #2E3035;
+$gray-color: #4F4F4F;
+$light-blue: rgba(71, 147, 255, 0.2);
+
+//text color
+$text-dark: #000000;
+$text-gray: #939CB0;
+$text-light: #FFFFFF;
+$text-blue: #4793FF;
+
+//shadow
+$shadow-light: 2px 5px 25px rgba(180, 180, 180, 0.25);
+
+:root {
+  //body background
+  --body-background-light: $light-color;
+  --body-background-dark: $black-color;
+
+  //componenets background
+  --componenets-background-light: $light-color;
+  --componenets-background-dark: $gray-color;
+
+  //card background
+  --card-background-light: $light-blue;
+  --card-background-dark: $dark-color;
+
+  //cart shadow
+  --card-shadow: $shadow-light;
+
+  //text
+  --text-color-dark: $text-dark;
+  --text-color-gray: $text-gray;
+  --text-color-light: $text-light;
+  --text-color-blue: #{$text-blue};
+}

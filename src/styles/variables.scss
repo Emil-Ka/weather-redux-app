@@ -16,23 +16,23 @@ $shadow-light: 2px 5px 25px rgba(180, 180, 180, 0.25);
 
 :root {
   //body background
-  --body-background-light: $light-color;
-  --body-background-dark: $black-color;
+  --body-background-light: #{$light-color};
+  --body-background-dark: #{$black-color};
 
   //componenets background
-  --componenets-background-light: $light-color;
-  --componenets-background-dark: $gray-color;
+  --componenets-background-light: #{$light-color};
+  --componenets-background-dark: #{$gray-color};
 
   //card background
-  --card-background-light: $light-blue;
-  --card-background-dark: $dark-color;
+  --card-background-light: #{$light-blue};
+  --card-background-dark: #{$dark-color};
 
   //cart shadow
-  --card-shadow: $shadow-light;
+  --card-shadow: #{$shadow-light};
 
   //text
-  --text-color-dark: $text-dark;
-  --text-color-gray: $text-gray;
-  --text-color-light: $text-light;
+  --text-color-dark: #{$text-dark};
+  --text-color-gray: #{$text-gray};
+  --text-color-light: #{$text-light};
   --text-color-blue: #{$text-blue};
 }

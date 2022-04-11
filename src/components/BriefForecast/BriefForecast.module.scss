@@ -1,0 +1,40 @@
+.briefForecast {
+  box-shadow: var(--card-shadow);
+  border-radius: 20px;
+  padding: 20px;
+  width: 400px;
+}
+
+.weatherInfo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  svg {
+    width: 119px;
+    height: 119px;
+  }
+}
+
+.temp {
+  color: var(--text-color-blue);
+  font-weight: 500;
+  font-size: 6rem;
+  line-height: 7.3rem;
+}
+
+.today {
+  color: var(--text-color-dark);
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+
+.locationInfo {
+  p {
+    color: var(--text-color-gray);
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    margin-top: 14px;
+  }
+}

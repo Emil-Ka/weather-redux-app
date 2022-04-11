@@ -1,0 +1,41 @@
+.card {
+  background: var(--card-background-default);
+  border-radius: 10px;
+  padding: 12px 11px;
+  min-width: 150px;
+  margin-bottom: 20px;
+}
+
+.dayWeek {
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  margin-bottom: 7px;
+}
+
+.date {
+  color: var(--text-color-gray);
+  font-size: 0.9rem;
+  line-height: 1rem;
+  margin-bottom: 12px;
+}
+
+.temp {
+  font-weight: 500;
+  font-size: 1.1rem;
+  line-height: 1.4rem;
+  margin-top: 13px;
+}
+
+.tempLike {
+  color: var(--text-color-gray);
+  font-size: 0.9rem;
+  line-height: 1rem;
+  margin-bottom: 6px;
+}
+
+.weatherDesc {
+  color: var(--text-color-gray);
+  font-size: 0.9rem;
+  line-height: 1rem;
+}

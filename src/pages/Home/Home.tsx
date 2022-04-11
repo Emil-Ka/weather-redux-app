@@ -1,6 +1,7 @@
 import {Header} from '../../components/Header';
 import {BriefForecast} from '../../components/BriefForecast';
 import {ForecastInfo} from '../../components/ForecastInfo';
+import {DaysForecast} from '../../components/DaysForecast';
 
 import styles from './Home.module.scss';
 
@@ -13,6 +14,7 @@ export const Home = () => {
           <BriefForecast/>
           <ForecastInfo/>
         </div>
+        <DaysForecast/>
       </div>
     </div>
   )

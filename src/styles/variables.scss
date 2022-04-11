@@ -13,22 +13,27 @@ $text-blue: #4793FF;
 
 //shadow
 $shadow-light: 2px 5px 25px rgba(180, 180, 180, 0.25);
+$shadow-blue: 1px 4px 10px rgba(71, 147, 255, 0.2);
 
 :root {
   //body background
   --body-background-light: #{$light-color};
   --body-background-dark: #{$black-color};
+  --body-background-default: #{$light-color};
 
   //componenets background
   --componenets-background-light: #{$light-color};
   --componenets-background-dark: #{$gray-color};
+  --componenets-background-default: #{$light-color};
 
   //card background
   --card-background-light: #{$light-blue};
   --card-background-dark: #{$dark-color};
+  --card-background-default: #{$light-blue};
 
   //cart shadow
   --card-shadow: #{$shadow-light};
+  --card-shadow-blue: #{$shadow-blue};
 
   //text
   --text-color-dark: #{$text-dark};

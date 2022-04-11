@@ -9,11 +9,11 @@
   align-items: center;
 
   h1 {
+    color: var(--text-color-blue);
     font-weight: 700;
     font-size: 1.5rem;
     line-height: 1.9rem;
     text-transform: uppercase;
-    color: var(--text-color-blue);
     margin-left: 30px;
   }
 }
@@ -31,6 +31,8 @@
   }
 
   input {
+    color: var(--text-color-dark);
+    background: var(--card-background-default);
     display: block;
     border: 0;
     border-radius: 10px;
@@ -39,8 +41,6 @@
     line-height: 1.25rem;
     font-weight: 500;
     outline: none;
-    color: var(--text-color-dark);
-    background: var(--card-background-light);
     margin-left: 20px;
   }
 }

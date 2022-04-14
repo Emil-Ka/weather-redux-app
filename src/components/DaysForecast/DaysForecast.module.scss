@@ -1,10 +1,10 @@
 .cards {
-  background: var(--components-background-default);
-  box-shadow: var(--card-shadow);
+  background: var(--componenets-background-default);
+  box-shadow: var(--card-shadow-default);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   border-radius: 20px;
   padding: 20px 20px 0 20px;
-  margin-top: 7px;
+  margin-top: 10px;
 }

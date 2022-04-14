@@ -1,5 +1,7 @@
 import {IndicatorsSvgSelector} from "../../assets/icons/indicators";
 
+import pressureIcon from '../../assets/img/barometer.png';
+
 import styles from './ForecastInfo.module.scss';
 
 export const ForecastInfo = () => {
@@ -18,7 +20,7 @@ export const ForecastInfo = () => {
         <li>
           <div className={styles.indicator}>
             <div className={styles.round}>
-              <IndicatorsSvgSelector id="humidity"/>
+              <img src={pressureIcon} className={styles.pressureIcon} alt="pressure"/>
             </div>
             <p className={styles.indicatorTitle}>Давление</p>
           </div>

@@ -13,30 +13,43 @@ $text-blue: #4793FF;
 
 //shadow
 $shadow-light: 2px 5px 25px rgba(180, 180, 180, 0.25);
+$shadow-dark: 2px 3px 20px rgba(100, 100, 100, 0.28);
 $shadow-blue: 1px 4px 10px rgba(71, 147, 255, 0.2);
+
 
 :root {
   //body background
   --body-background-light: #{$light-color};
   --body-background-dark: #{$black-color};
-  --body-background-default: var(#{$light-color});
+  --body-background-default: var(#{--body-background-light});
 
   //componenets background
   --componenets-background-light: #{$light-color};
   --componenets-background-dark: #{$gray-color};
-  --componenets-background-default: var(#{$light-color});
+  --componenets-background-default: var(#{--componenets-background-light});
 
   //card background
   --card-background-light: #{$light-blue};
   --card-background-dark: #{$dark-color};
-  --card-background-default: var(#{$light-blue});
+  --card-background-default: var(#{--card-background-light});
 
-  //cart shadow
-  --card-shadow: #{$shadow-light};
+  //card shadow
+  --card-shadow-light: #{$shadow-light};
+  --card-shadow-dark: #{$shadow-dark};
+  --card-shadow-default: var(#{--card-shadow-light});
   --card-shadow-blue: #{$shadow-blue};
 
   //text
   --text-color-light: #{$text-dark};
   --text-color-dark: #{$text-light};
-  --text-color-default: var(#{$text-dark});
+  --text-color-default: var(#{--text-color-light});
+
+  //indicator background
+  --indicator-background-light: #{$light-color};
+  --indicator-background-dark: #{$dark-color};
+  --indicator-background-default: var(#{--indicator-background-light});
+
+  //other text
+  --text-color-blue: #{$text-blue};
+  --text-color-gray: #{$text-gray};
 }

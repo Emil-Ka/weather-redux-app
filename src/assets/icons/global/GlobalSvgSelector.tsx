@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface Props {
+interface Props extends React.ComponentProps<'svg'> {
   id: 'logo' | 'change-theme' | 'rain' | 'rain-sun' | 'small-rain' | 'sun' | 'mainly' | 'close';
 };
 

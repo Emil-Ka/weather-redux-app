@@ -1,0 +1,111 @@
+.background {
+  position: fixed;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.25);
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  visibility: hidden;
+  opacity: 0;
+
+  &_active {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.popup {
+  background: var(--componenets-background-default);
+  position: relative;
+  top: 25%;
+  padding: 20px 26px 42px 42px;
+  border-radius: 20px;
+  width: 750px;
+  margin: 0 auto;
+}
+
+.popupInner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.closeIcon {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+
+  svg {
+    cursor: pointer;
+  }
+}
+
+.temp {
+  color: var(--text-color-blue);
+  font-weight: 500;
+  font-size: 3.7rem;
+  line-height: 4.5rem;
+  margin-bottom: 12px;
+}
+
+.dayWeek {
+  color: var(--text-color-default);
+  font-size: 1.5rem;
+  line-height: 1.9rem;
+  margin-bottom: 12px;
+}
+
+.date {
+  color: var(--text-color-gray);
+  font-size: 1rem;
+  line-height: 1.1rem;
+  margin-top: 12px;
+}
+
+.city {
+  color: var(--text-color-gray);
+  font-size: 1rem;
+  line-height: 1.1rem;
+}
+
+.indicators {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+  list-style-type: none;
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.indicator {
+  display: flex;
+  align-items: center;
+}
+
+.indicatorTitle {
+  color: var(--text-color-gray);
+  font-size: 0.9rem;
+  line-height: 1rem;
+  text-align: right;
+  margin-right: 30px;
+}
+
+.weatherDesc {
+  color: var(--text-color-default);
+  font-size: 0.9rem;
+  line-height: 1rem;
+}
+
+.round {
+  background: var(--body-background-default);
+  box-shadow: var(--card-shadow-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  margin-right: 20px;
+}

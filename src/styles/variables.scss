@@ -19,25 +19,24 @@ $shadow-blue: 1px 4px 10px rgba(71, 147, 255, 0.2);
   //body background
   --body-background-light: #{$light-color};
   --body-background-dark: #{$black-color};
-  --body-background-default: #{$light-color};
+  --body-background-default: var(#{$light-color});
 
   //componenets background
   --componenets-background-light: #{$light-color};
   --componenets-background-dark: #{$gray-color};
-  --componenets-background-default: #{$light-color};
+  --componenets-background-default: var(#{$light-color});
 
   //card background
   --card-background-light: #{$light-blue};
   --card-background-dark: #{$dark-color};
-  --card-background-default: #{$light-blue};
+  --card-background-default: var(#{$light-blue});
 
   //cart shadow
   --card-shadow: #{$shadow-light};
   --card-shadow-blue: #{$shadow-blue};
 
   //text
-  --text-color-dark: #{$text-dark};
-  --text-color-gray: #{$text-gray};
-  --text-color-light: #{$text-light};
-  --text-color-blue: #{$text-blue};
+  --text-color-light: #{$text-dark};
+  --text-color-dark: #{$text-light};
+  --text-color-default: var(#{$text-dark});
 }

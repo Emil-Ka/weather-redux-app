@@ -10,12 +10,12 @@ interface ThemeProviderProps {
 }
 
 export const ThemeProvider = ({children, ...props}: ThemeProviderProps) => {
-  const [theme, setTheme] = useState<themeConstants>(getThemeStorage() || themeConstants.LIGHT);
+  const [theme, setTheme] = useState<themeConstants>(getThemeStorage('theme') || themeConstants.LIGHT);
 
   changeCssVariables(theme);
   const changeTheme = (theme: themeConstants) => {
     setTheme(theme);
-    setThemeStorage(theme);
+    setThemeStorage('theme', theme);
     changeCssVariables(theme);
   };
 

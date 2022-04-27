@@ -1,12 +1,10 @@
-import {themeConstants} from '../context/ThemeContext';
-
-export const getThemeStorage = () => {
-  const item = localStorage.getItem('theme');
+export const getThemeStorage = (key: string) => {
+  const item = localStorage.getItem(key);
   if (item) {
     return JSON.parse(item);
   }
 };
 
-export const setThemeStorage = (theme: themeConstants) => {
-  localStorage.setItem('theme', JSON.stringify(theme));
+export const setThemeStorage = (key: string, value: string) => {
+  localStorage.setItem(key, JSON.stringify(value));
 };

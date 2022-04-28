@@ -1,10 +1,17 @@
-import {IndicatorsSvgSelector} from "../../assets/icons/indicators";
+import {useTypedSelector} from '../../hooks/useTypedSelector';
+import {calcPressure, scalePressure} from '../../services/pressure';
+import {scaleWindSpeed, directionWind} from '../../services/wind';
 
+import {IndicatorsSvgSelector} from "../../assets/icons/indicators";
 import pressureIcon from '../../assets/img/barometer.png';
 
 import styles from './ForecastInfo.module.scss';
 
 export const ForecastInfo = () => {
+  const {weatherData, loading, error} = useTypedSelector(state => state.weather);
+
+  const pressure = calcPressure(weatherData.pressure);
+
   return (
     <section className={styles.forecastInfo}>
       <ul className={styles.indicators}>
@@ -15,7 +22,7 @@ export const ForecastInfo = () => {
             </div>
             <p className={styles.indicatorTitle}>Температура</p>
           </div>
-          <p className={styles.weatherDesc}>20° - ощущается как 17°</p>
+          <p className={styles.weatherDesc}>{weatherData.temp}° -  ощущается как {weatherData.feelTemp}°</p>
         </li>
         <li>
           <div className={styles.indicator}>
@@ -24,16 +31,16 @@ export const ForecastInfo = () => {
             </div>
             <p className={styles.indicatorTitle}>Давление</p>
           </div>
-          <p className={styles.weatherDesc}>765 мм ртутного столба - нормальное</p>
+          <p className={styles.weatherDesc}>{pressure} мм ртутного столба - {scalePressure(pressure)}</p>
         </li>
         <li>
           <div className={styles.indicator}>
             <div className={styles.round}>
-              <IndicatorsSvgSelector id="pressure"/>
+              <IndicatorsSvgSelector id="humidity"/>
             </div>
-            <p className={styles.indicatorTitle}>Осадки</p>
+            <p className={styles.indicatorTitle}>Влажность</p>
           </div>
-          <p className={styles.weatherDesc}>Без осадков</p>
+          <p className={styles.weatherDesc}>{weatherData.humidity}%</p>
         </li>
         <li>
           <div className={styles.indicator}>
@@ -42,7 +49,7 @@ export const ForecastInfo = () => {
             </div>
             <p className={styles.indicatorTitle}>Ветер</p>
           </div>
-          <p className={styles.weatherDesc}>3 м/с юго-запад - легкий ветер</p>
+          <p className={styles.weatherDesc}>{Math.round(weatherData.windSpeed)} м/с  {directionWind(weatherData.windDeg)} - {scaleWindSpeed(weatherData.windSpeed)}</p>
         </li>
       </ul>
     </section>

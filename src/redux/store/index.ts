@@ -1,7 +1,9 @@
-import {configureStore} from '@reduxjs/toolkit';
+import {createStore, applyMiddleware, compose} from 'redux';
+import reduxThunk from 'redux-thunk';
+import {composeWithDevTools} from 'redux-devtools-extension';
 
-import {reducer} from '../reducers/index';
+import {rootReducer} from '../reducers/index';
 
-export const store = configureStore({
-  reducer: {reducer}
-})
+const devTool = 'window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()';
+
+export const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(reduxThunk)));

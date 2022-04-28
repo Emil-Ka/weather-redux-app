@@ -2,15 +2,18 @@
   background: var(--componenets-background-default);
   box-shadow: var(--card-shadow-default);
   border-radius: 20px;
-  padding: 20px;
+  padding: 20px 30px 20px 30px;
   width: 400px;
 }
 
 .weatherInfo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   margin-bottom: 30px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   svg {
     width: 119px;

@@ -3,6 +3,8 @@ import cx from 'classnames';
 import {GlobalSvgSelector} from '../../assets/icons/global';
 import {IndicatorsSvgSelector} from '../../assets/icons/indicators';
 
+import pressureIcon from '../../assets/img/barometer.png';
+
 import styles from './Popup.module.scss';
 
 export const Popup = () => {
@@ -36,7 +38,7 @@ export const Popup = () => {
             <li>
               <div className={styles.indicator}>
                 <div className={styles.round}>
-                  <IndicatorsSvgSelector id="humidity"/>
+                  <img src={pressureIcon} className={styles.pressureIcon} alt="pressure"/>
                 </div>
                 <p className={styles.indicatorTitle}>Давление</p>
               </div>
@@ -45,7 +47,7 @@ export const Popup = () => {
             <li>
               <div className={styles.indicator}>
                 <div className={styles.round}>
-                  <IndicatorsSvgSelector id="pressure"/>
+                  <IndicatorsSvgSelector id="humidity"/>
                 </div>
                 <p className={styles.indicatorTitle}>Осадки</p>
               </div>

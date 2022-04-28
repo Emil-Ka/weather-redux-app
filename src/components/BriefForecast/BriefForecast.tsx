@@ -1,20 +1,24 @@
-import {GlobalSvgSelector} from '../../assets/icons/global';
+import {useTypedSelector} from '../../hooks/useTypedSelector';
+import {getHoursMinute} from '../../services/time';
+import {getIcon} from '../../services/iconWeather';
 
 import styles from './BriefForecast.module.scss';
 
 export const BriefForecast = () => {
+  const {weatherData, loading, error} = useTypedSelector(state => state.weather);
+
   return (
     <section className={styles.briefForecast}>
       <div className={styles.weatherInfo}>
         <div>
-          <p className={styles.temp}>20°</p>
-          <p className={styles.today}>Сегодня</p>
+          <p className={styles.temp}>{weatherData.temp}°</p>
+          {getIcon(weatherData.icon)}
         </div>
-        <GlobalSvgSelector id="sun"/>
+        <p className={styles.today}>{weatherData.description}</p>
       </div>
       <div className={styles.locationInfo}>
-        <p>Время: 21:54</p>
-        <p>Город: Санкт-Петербург</p>
+        <p>Время: {getHoursMinute()}</p>
+        <p>Город: {weatherData.city}</p>
       </div>
     </section>
   )

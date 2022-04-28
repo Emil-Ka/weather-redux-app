@@ -1,4 +1,8 @@
 import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
+import {useTypedSelector} from '../../hooks/useTypedSelector';
+
+import {fetchWeather} from '../../redux/actions';
 
 import {Header} from '../../components/Header';
 import {BriefForecast} from '../../components/BriefForecast';
@@ -10,16 +14,11 @@ import {getWeather} from '../../services/weather';
 import styles from './Home.module.scss';
 
 export const Home = () => {
-  
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    logWeather();
+    dispatch(fetchWeather());
   }, []);
-
-  const logWeather = async () => {
-    const data = await getWeather('moscow');
-    console.log(data);
-  }
 
   return (
     <div className={styles.home}>

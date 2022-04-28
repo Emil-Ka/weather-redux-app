@@ -1,9 +1,9 @@
-import {createReducer} from '@reduxjs/toolkit'
+import {combineReducers} from 'redux';
 
-const initialState = {
-  city: ''
-}
+import {weatherReducer} from './weatherReducer';
 
-export const reducer = createReducer(initialState, builder => {
-  
-})
+export const rootReducer = combineReducers({
+  weather: weatherReducer
+});
+
+export type RootState = ReturnType<typeof rootReducer>;

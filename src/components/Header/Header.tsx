@@ -1,18 +1,38 @@
-import {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react';
 import {AiOutlineSearch as SearchIcon} from 'react-icons/ai';
+import {useDispatch} from 'react-redux';
 
+import {fetchWeather} from '../../redux/actions';
 import {GlobalSvgSelector} from '../../assets/icons/global';
-import {useTheme} from '../../hooks/useTheme';
-import {themeConstants} from '../../context/ThemeContext';
+import {useTypedSelector} from '../../hooks/useTypedSelector';
+import {themeConstants} from '../../redux/types/theme';
+import {switchTheme} from '../../redux/actions'
 
 import styles from './Header.module.scss';
 
 export const Header = () => {
-  const {theme, changeTheme} = useTheme();
+  const [city, setCity] = useState<string>('');
+  const {weatherData} = useTypedSelector(state => state.weather);
+  const {theme} = useTypedSelector(state => state.theme);
+  const dispatch = useDispatch();
 
   const onChangeTheme = () => {
-    changeTheme(theme === themeConstants.LIGHT ? themeConstants.DARK : themeConstants.LIGHT);
+    dispatch(switchTheme());
   };
+
+  const onChangeCity = (event: React.ChangeEvent<HTMLInputElement>): void => {
+    setCity(event.target.value);
+  };
+
+  const onSendCityByKey = (event: React.KeyboardEvent): void => {
+    if (event.key === 'Enter') {
+      dispatch(fetchWeather(city));
+    }
+  };
+
+  const onSendCityByClick = (): void => {
+    dispatch(fetchWeather(city));
+  }
 
   return (
     <header className={styles.header}>
@@ -25,8 +45,15 @@ export const Header = () => {
           <GlobalSvgSelector id="change-theme"/>
         </div>
         <div>
-          <input type="text" name="city" placeholder="Введите город"/>
+          <input 
+            onChange={onChangeCity}
+            onKeyDown={onSendCityByKey}
+            type="text" 
+            name="city" 
+            placeholder="Введите город"
+            value={city}/>
           <SearchIcon 
+            onClick={onSendCityByClick}
             color={theme === themeConstants.LIGHT ? '#000' : '#fff'} 
             className={styles.searchIcon}/>
         </div>

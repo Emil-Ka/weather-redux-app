@@ -1,6 +1,5 @@
 import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
-import {useTypedSelector} from '../../hooks/useTypedSelector';
 
 import {fetchWeather} from '../../redux/actions';
 

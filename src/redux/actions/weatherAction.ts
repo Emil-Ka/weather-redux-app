@@ -1,14 +1,13 @@
 import {Dispatch} from 'redux';
-import axios from 'axios';
 
 import {getWeather} from '../../services/weather';
 import {WeatherData} from '../types/weather';
+import {getStorage, setStorage} from '../../model/localStorage';
 import {WeatherActionType, WeatherFetchingAction, WeatherFetchedAction, WeatherFetchError, WeatherAction} from '../types/weather';
 
-const API_KEY = 'db7a1757a03c431aea604f5b7ddbc58f';
-const url = 'https://api.openweathermap.org/data/2.5/weather';
+const defaultCity: string = getStorage('city') || 'Москва';
 
-export const fetchWeather = (city: string = 'оймякон') => async (dispatch: Dispatch<WeatherAction>) => {
+export const fetchWeather = (city: string = defaultCity) => async (dispatch: Dispatch<WeatherAction>) => {
   dispatch(weatherFetching());
   getWeather(city)
     .then(data => dispatch(weatherFetched(data)))
@@ -22,6 +21,8 @@ const weatherFetching = (): WeatherFetchingAction => {
 };
 
 const weatherFetched = (data: any): WeatherFetchedAction => {
+  setStorage('city', data.name);
+
   const weatherData: WeatherData = {
     city: data.name,
     description: data.weather[0].description,

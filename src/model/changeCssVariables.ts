@@ -1,4 +1,4 @@
-import {themeConstants} from '../context/ThemeContext';
+import {themeConstants} from '../redux/types/theme';
 
 export const changeCssVariables = (theme: themeConstants) => {
   const root = document.querySelector(':root') as HTMLElement;
@@ -9,7 +9,7 @@ export const changeCssVariables = (theme: themeConstants) => {
     'card-shadow',
     'text-color',
     'indicator-background'
-  ]
+  ];
 
   components.forEach(component => {
     root.style.setProperty(`--${component}-default`, `var(--${component}-${theme})`)

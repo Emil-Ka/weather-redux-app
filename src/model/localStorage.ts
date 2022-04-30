@@ -1,10 +1,10 @@
-export const getThemeStorage = (key: string) => {
+export const getStorage = (key: string) => {
   const item = localStorage.getItem(key);
   if (item) {
     return JSON.parse(item);
   }
 };
 
-export const setThemeStorage = (key: string, value: string) => {
+export const setStorage = (key: string, value: string) => {
   localStorage.setItem(key, JSON.stringify(value));
 };

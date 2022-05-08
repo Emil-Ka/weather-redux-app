@@ -1,6 +1,8 @@
+import React from 'react';
+
 import styles from './Tabs.module.scss';
 
-export const Tabs = () => {
+export const Tabs: React.FC = () => {
   return (
     <div className={styles.tabs}>
       <div className={styles.dayTabs}>

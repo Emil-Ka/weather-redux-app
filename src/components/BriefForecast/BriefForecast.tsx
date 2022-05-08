@@ -1,10 +1,12 @@
+import React from 'react';
+
 import {useTypedSelector} from '../../hooks/useTypedSelector';
 import {getHoursMinute} from '../../services/time';
 import {getIcon} from '../../services/iconWeather';
 
 import styles from './BriefForecast.module.scss';
 
-export const BriefForecast = () => {
+export const BriefForecast: React.FC = () => {
   const {weatherData, loading, error} = useTypedSelector(state => state.weather);
 
   return (

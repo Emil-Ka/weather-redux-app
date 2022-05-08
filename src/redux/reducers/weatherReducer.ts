@@ -14,7 +14,7 @@ const initialState: WeatherState = {
     time: 0
   },
   loading: false,
-  error: false
+  error: null
 }
 
 export const weatherReducer = (state = initialState, action: WeatherAction): WeatherState => {
@@ -23,18 +23,20 @@ export const weatherReducer = (state = initialState, action: WeatherAction): Wea
       return {
         ...state,
         loading: true,
+        error: null
       };
     case WeatherActionType.WEATHER_FETCHED:
       return {
         ...state,
         loading: false,
+        error: null,
         weatherData: action.payload
       };
     case WeatherActionType.WEATHER_FETCH_ERROR:
       return {
         ...state,
         loading: false,
-        error: true
+        error: action.payload
       };
     default:
       return state;

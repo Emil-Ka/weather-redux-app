@@ -3,7 +3,7 @@
   box-shadow: var(--card-shadow-default);
   border-radius: 20px;
   padding: 20px 30px 20px 30px;
-  width: 400px;
+  
 }
 
 .weatherInfo {
@@ -26,12 +26,24 @@
   font-weight: 500;
   font-size: 6rem;
   line-height: 7.3rem;
+
+  @media (max-width: 960px) and (min-width: 781px) {
+    font-size: 5rem;
+  }
 }
 
 .today {
   color: var(--text-color-default);
   font-size: 2.5rem;
   line-height: 3rem;
+
+  @media (max-width: 960px) and (min-width: 781px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5em;
+  }
 }
 
 .locationInfo {

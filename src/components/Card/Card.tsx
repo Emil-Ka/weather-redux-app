@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {GlobalSvgSelector} from '../../assets/icons/global';
 
 import styles from './Card.module.scss';
@@ -10,7 +12,7 @@ interface ICardProps {
   weatherDesc: string;
 }
 
-export const Card = ({weekDay, date, temp, tempLike, weatherDesc}: ICardProps) => {
+export const Card: React.FC<ICardProps> = ({weekDay, date, temp, tempLike, weatherDesc}) => {
   return (
     <div className={styles.card}>
       <p className={styles.dayWeek}>{weekDay}</p>

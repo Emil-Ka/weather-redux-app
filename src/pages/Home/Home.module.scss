@@ -1,19 +1,40 @@
 .home {
   background: var(--body-background-default);
-  height: 100vh;
+  height: 100%;
   padding-bottom: 100px;
   position: relative;
-  overflow-y: hidden;
 }
 
 .wrapper {
-  max-width: 1200px;
+  max-width: 1220px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .oneDayInfo {
-  display: grid;
-  grid-template-columns: 400px 1fr;
-  gap: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  // grid-template-columns: 1fr 2fr;
+  // grid-template-columns: repeat(auto-fit, 1fr);
+  // gap: 0 50px;
   padding-bottom: 50px;
+}
+
+.briefForecast {
+  width: 40%;
+  margin-bottom: 50px;
+
+  @media (max-width: 782px) {
+    width: 100%;
+  }
+}
+
+.forecastInfo {
+  width: 55%;
+
+  @media (max-width: 782px) {
+    width: 100%;
+  }
 }

@@ -40,23 +40,21 @@ export const Header = () => {
         <GlobalSvgSelector id="logo"/>
         <h1>React Weather</h1>
       </div>
+      <div onClick={onChangeTheme} className={styles.themeBlock}>
+        <GlobalSvgSelector id="change-theme"/>
+      </div>
       <div className={styles.searchBlock}>
-        <div onClick={onChangeTheme}>
-          <GlobalSvgSelector id="change-theme"/>
-        </div>
-        <div>
-          <input 
-            onChange={onChangeCity}
-            onKeyDown={onSendCityByKey}
-            type="text" 
-            name="city" 
-            placeholder="Введите город"
-            value={city}/>
-          <SearchIcon 
-            onClick={onSendCityByClick}
-            color={theme === themeConstants.LIGHT ? '#000' : '#fff'} 
-            className={styles.searchIcon}/>
-        </div>
+        <input 
+          onChange={onChangeCity}
+          onKeyDown={onSendCityByKey}
+          type="text" 
+          name="city" 
+          placeholder="Введите город"
+          value={city}/>
+        <SearchIcon 
+          onClick={onSendCityByClick}
+          color={theme === themeConstants.LIGHT ? '#000' : '#fff'} 
+          className={styles.searchIcon}/>
       </div>
     </header>
   )

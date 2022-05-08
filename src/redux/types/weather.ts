@@ -1,8 +1,8 @@
 export interface WeatherState {
   weatherData: WeatherData
   loading: boolean;
-  error: boolean;
-}
+  error: string | null;
+};
 
 export interface WeatherData {
   city: string;
@@ -15,7 +15,7 @@ export interface WeatherData {
   windDeg: number;
   icon: string;
   time: number;
-}
+};
 
 export enum WeatherActionType {
   WEATHER_FETCHING = 'WEATHER_FETCHING',
@@ -34,6 +34,7 @@ export interface WeatherFetchedAction {
 
 export interface WeatherFetchError {
   type: WeatherActionType.WEATHER_FETCH_ERROR;
+  payload: string;
 };
 
 export type WeatherAction = WeatherFetchingAction | WeatherFetchedAction | WeatherFetchError;

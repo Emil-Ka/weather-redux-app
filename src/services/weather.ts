@@ -11,5 +11,5 @@ export const getWeather = async (city: string) => {
     if (err instanceof Error) {
       throw new Error(err.message);
     }
-  }
+  };
 };

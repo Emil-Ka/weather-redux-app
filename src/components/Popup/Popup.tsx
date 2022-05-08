@@ -1,3 +1,4 @@
+import React from 'react';
 import cx from 'classnames';
 
 import {GlobalSvgSelector} from '../../assets/icons/global';
@@ -7,7 +8,7 @@ import pressureIcon from '../../assets/img/barometer.png';
 
 import styles from './Popup.module.scss';
 
-export const Popup = () => {
+export const Popup: React.FC = () => {
   const active = false;
   return (
     <div className={cx(styles.background, {

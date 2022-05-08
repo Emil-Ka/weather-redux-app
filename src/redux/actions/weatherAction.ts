@@ -11,7 +11,7 @@ export const fetchWeather = (city: string = defaultCity) => async (dispatch: Dis
   dispatch(weatherFetching());
   getWeather(city)
     .then(data => dispatch(weatherFetched(data)))
-    .catch(() => weatherFetchError());
+    .catch((error: Error) => dispatch(weatherFetchError(error.message)));
 };
 
 const weatherFetching = (): WeatherFetchingAction => {
@@ -42,8 +42,9 @@ const weatherFetched = (data: any): WeatherFetchedAction => {
   };
 };
 
-const weatherFetchError = (): WeatherFetchError => {
+const weatherFetchError = (errorMessage: string): WeatherFetchError => {
   return {
-    type: WeatherActionType.WEATHER_FETCH_ERROR
+    type: WeatherActionType.WEATHER_FETCH_ERROR,
+    payload: errorMessage
   };
 };

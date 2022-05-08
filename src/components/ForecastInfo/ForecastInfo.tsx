@@ -1,3 +1,5 @@
+import React from 'react';
+
 import {useTypedSelector} from '../../hooks/useTypedSelector';
 import {calcPressure, scalePressure} from '../../services/pressure';
 import {scaleWindSpeed, directionWind} from '../../services/wind';
@@ -7,7 +9,7 @@ import pressureIcon from '../../assets/img/barometer.png';
 
 import styles from './ForecastInfo.module.scss';
 
-export const ForecastInfo = () => {
+export const ForecastInfo: React.FC = () => {
   const {weatherData, loading, error} = useTypedSelector(state => state.weather);
 
   const pressure = calcPressure(weatherData.pressure);

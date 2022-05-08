@@ -1,9 +1,11 @@
+import React from 'react';
+
 import {Tabs} from '../Tabs';
 import {Card} from '../Card';
 
 import styles from './DaysForecast.module.scss';
 
-export const DaysForecast = () => {
+export const DaysForecast: React.FC = () => {
   return (
     <section>
       <Tabs/>

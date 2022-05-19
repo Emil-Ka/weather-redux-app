@@ -1,0 +1,24 @@
+.tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dayTabs {
+  display: flex;
+  justify-content: space-between;
+  width: 450px;
+}
+
+.tab {
+  background: var(--componenets-background-default);
+  box-shadow: var(--card-shadow-default);
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+
+  span {
+    color: var(--text-color-default);
+    font-size: 1.1rem;
+    line-height: 1.4rem;
+  }
+}

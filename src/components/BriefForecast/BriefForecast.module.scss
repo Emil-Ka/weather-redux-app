@@ -1,0 +1,56 @@
+.briefForecast {
+  background: var(--componenets-background-default);
+  box-shadow: var(--card-shadow-default);
+  border-radius: 20px;
+  padding: 20px 30px 20px 30px;
+  
+}
+
+.weatherInfo {
+  margin-bottom: 30px;
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  svg {
+    width: 119px;
+    height: 119px;
+  }
+}
+
+.temp {
+  color: var(--text-color-blue);
+  font-weight: 500;
+  font-size: 6rem;
+  line-height: 7.3rem;
+
+  @media (max-width: 960px) and (min-width: 781px) {
+    font-size: 5rem;
+  }
+}
+
+.today {
+  color: var(--text-color-default);
+  font-size: 2.5rem;
+  line-height: 3rem;
+
+  @media (max-width: 960px) and (min-width: 781px) {
+    font-size: 2rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5em;
+  }
+}
+
+.locationInfo {
+  p {
+    color: var(--text-color-gray);
+    font-size: 1.5rem;
+    line-height: 1.9rem;
+    margin-top: 14px;
+  }
+}

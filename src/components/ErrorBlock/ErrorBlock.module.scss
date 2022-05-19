@@ -1,0 +1,18 @@
+.errorBlock {
+  background: var(--componenets-background-default);
+  box-shadow: var(--card-shadow-default);
+  padding: 100px 55px;
+  border-radius: 20px;
+  width: 100%;
+  grid-column: 1/3;
+}
+
+.title {
+  color: var(--text-color-default);
+  text-align: center;
+}
+
+.emoji {
+  display: block;
+  margin: 0 auto;
+}

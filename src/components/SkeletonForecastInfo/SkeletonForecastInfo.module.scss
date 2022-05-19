@@ -1,0 +1,58 @@
+.forecastInfo {
+  background-color: var(--componenets-background-default);
+  box-shadow: var(--card-shadow-default);
+  height: 100%;
+  border-radius: 20px;
+  padding: 41px 31px;
+  width: 100%;
+
+  ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    li {
+      display: flex;
+      align-items: center;
+
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.round {
+  background: #DCDCDC;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+  margin-right: 22px;
+  animation: pulse 1.5s ease-in-out .5s infinite;
+}
+
+.rectangle {
+  width: 100%;
+  background: #DCDCDC;
+  height: 31px;
+  border-radius: 10px;
+  box-shadow: 1px 4px 10px -1px rgba(71, 147, 255, 0.2);
+  animation: pulse 1.5s ease-in-out .5s infinite;
+
+
+}
+
+@keyframes pulse {
+  0% {
+      opacity: .9
+  }
+  50% {
+      opacity: .4
+  }
+  100% {
+      opacity: .9
+  }
+}

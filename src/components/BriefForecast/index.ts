@@ -1,1 +1,1 @@
-export * from './BriefForecast'
+export * from './BriefForecast';
